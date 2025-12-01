@@ -1,7 +1,6 @@
-layout:page
+layout: page
 title: "Test Page"
-permalink:/test
-
+permalink: /test
 
 
 Here is a test page
