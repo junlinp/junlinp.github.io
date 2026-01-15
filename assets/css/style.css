@@ -40,8 +40,8 @@ body {
 
 /* Header */
 .site-header {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.98) 100%);
-    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
     padding: 24px 0;
     position: sticky;
     top: 0;
