@@ -73,20 +73,14 @@ body {
 .nav-logo {
     font-size: 22px;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #3b82f6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
     letter-spacing: -0.5px;
 }
 
 .nav-logo:hover {
-    background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-color) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-color);
     transform: translateY(-1px);
 }
 
