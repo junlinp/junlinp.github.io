@@ -31,9 +31,6 @@ title: Home
                     </div>
                     {% endif %}
                 </div>
-                {% if post.excerpt %}
-                <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-                {% endif %}
             </a>
             {% endfor %}
         </div>
