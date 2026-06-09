@@ -23,9 +23,9 @@ and derive practical controller design guidelines.
 
 Command:
 
-```math
+$$
 v_x(t)=v_0+A\sin(2\pi f t)
-```
+$$
 
 where:
 
@@ -46,9 +46,9 @@ The positive offset avoids reverse motion, which was found to introduce yaw coup
 
 Command:
 
-```math
+$$
 \omega_z(t)=A\sin(2\pi f t)
-```
+$$
 
 Measured yaw is extracted from the VIO orientation using:
 
@@ -59,7 +59,7 @@ yaw = atan2(forward_y, forward_x)
 
 Yaw is unwrapped and fitted with:
 
-```math
+$$
 \theta(t)
 =
 a\sin(\omega t)
@@ -69,35 +69,35 @@ b\cos(\omega t)
 c
 +
 dt
-```
+$$
 
 where:
 
-```math
+$$
 \omega = 2\pi f
-```
+$$
 
 The measured yaw-rate amplitude is:
 
-```math
+$$
 \omega_{meas}
 =
 \omega
 \sqrt{a^2+b^2}
-```
+$$
 
 Frequency-response gain:
 
-```math
+$$
 Gain
 =
 \frac{\omega_{meas}}
 {\omega_{cmd}}
-```
+$$
 
 Phase lag:
 
-```math
+$$
 Lag
 =
 -\left(
@@ -105,16 +105,16 @@ Lag
 -
 \phi_{cmd}
 \right)
-```
+$$
 
 Delay estimate:
 
-```math
+$$
 Delay
 =
 \frac{Lag}
 {2\pi f}
-```
+$$
 
 ## Static Velocity Calibration
 
@@ -139,13 +139,13 @@ translation = 0.625 m
 
 Static gain:
 
-```math
+$$
 K_{vx}
 =
 0.127/0.20
 =
 0.635
-```
+$$
 
 The commanded velocity does not map directly to physical velocity.
 
@@ -165,9 +165,9 @@ The commanded velocity does not map directly to physical velocity.
 
 The -3 dB point corresponds to:
 
-```math
+$$
 Gain = 0.707
-```
+$$
 
 Observed:
 
@@ -178,11 +178,11 @@ Observed:
 
 Estimated bandwidth:
 
-```math
+$$
 f_{bw,vx}
 \approx
 2.2Hz
-```
+$$
 
 ### Delay Estimate
 
@@ -194,32 +194,32 @@ Observed delay:
 
 Approximate delay:
 
-```math
+$$
 L_{vx}
 \approx
 0.13s
-```
+$$
 
 ### Identified Model
 
 A first-order-plus-delay model fits the data reasonably well:
 
-```math
+$$
 G_{vx}(s)
 \approx
 \frac{e^{-0.13s}}
 {0.07s+1}
-```
+$$
 
 where:
 
-```math
+$$
 \tau
 \approx
 \frac{1}{2\pi\cdot2.2}
 \approx
 0.07s
-```
+$$
 
 ## Yaw Rate Response
 
@@ -270,11 +270,11 @@ Observed delay:
 
 Approximate delay:
 
-```math
+$$
 L_{yaw}
 \approx
 0.06s
-```
+$$
 
 ### Bandwidth Estimate
 
@@ -292,11 +292,11 @@ No clear -3 dB point was observed.
 
 Therefore:
 
-```math
+$$
 f_{bw,yaw}
 >
 6Hz
-```
+$$
 
 within the tested range.
 
@@ -304,11 +304,11 @@ within the tested range.
 
 The yaw-rate channel behaves approximately as:
 
-```math
+$$
 G_{yaw}(s)
 \approx
 0.85e^{-0.06s}
-```
+$$
 
 within the tested operating range.
 
@@ -327,11 +327,11 @@ This should be interpreted as an empirical model rather than a full system ident
 
 Since:
 
-```math
+$$
 f_{bw,vx}
 \approx
 2.2Hz
-```
+$$
 
 Recommended outer-loop bandwidth:
 
@@ -355,11 +355,11 @@ Higher values are likely to produce:
 
 Since:
 
-```math
+$$
 f_{bw,yaw}
 >
 6Hz
-```
+$$
 
 Heading control can generally be designed much more aggressively than translational control.
 
@@ -390,7 +390,6 @@ Key findings:
 
 These measurements provide a useful basis for navigation controller tuning, trajectory tracking, and future MPC design.
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
   window.MathJax = {
     tex: {
@@ -399,3 +398,4 @@ These measurements provide a useful basis for navigation controller tuning, traj
     }
   };
 </script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
